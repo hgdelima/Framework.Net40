@@ -1,0 +1,57 @@
+﻿
+<section>
+    <p>
+        <div id="usersGrid"></div>
+    </p>
+</section>
+
+<script>
+    $(document).ready(function () {
+        var urlGet = "@Url.Action("GetUsers")";
+
+        $("#usersGrid").kendoExcelGrid({
+            height: (window.innerHeight / 1.3),
+            sortable: true,
+            resizable: true,
+            pageable: true,
+            columns: [
+                { field: "Id", title: "Id", width: 45 },
+                { field: "NameOrDescription", title: "Name", width: 120 },
+                { field: "Login", title: "Login", width: 40 },
+                { field: "Email", title: "E-mail", width: 100 },
+                { field: "Status", title: "Status", width: 30 },
+            ],
+            excel: {
+                cssClass: "alcoa-grid-export-excel",
+                title: "users",
+                createUrl: "",
+                downloadUrl: ""
+            }
+        }).data("kendoGrid");
+
+        var dtUsers = new kendo.data.DataSource({
+            pageSize: 20,
+            type: "json",
+            transport: {
+                read: { url: urlGet }
+            },
+            schema: {
+                model: {
+                    fields: {
+                        Id: { type: "string" },
+                        Login: { type: "string" },
+                        NameOrDescription: { type: "string" },
+                        Email: { type: "string" },
+                        Status: { type: "string" },
+                    }
+                },
+            },
+            error: function (e) {
+                openDialog(e.errors);
+            }
+        });
+
+        //Rebinds data source in Kendo Grid
+        $("#usersGrid").data("kendoExcelGrid").setDataSource(dtUsers);
+    });
+</script>

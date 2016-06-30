@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1717eefd-2953-4b67-8b8e-42ba5f7638f7" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://app-intra.soa.alcoa.com/Alcoa.GAR/GarService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GarService.xsd" MetadataType="Schema" ID="2d18d4d1-b5d2-4a6a-b252-8b85f3930a05" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GarService1.xsd" MetadataType="Schema" ID="e60412d0-a4bd-4324-ab70-b7b7df929740" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GarService.wsdl" MetadataType="Wsdl" ID="88cd9c27-7b44-4a2c-b8e8-80bb9c76666f" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?wsdl" />
+    <MetadataFile FileName="GarService2.xsd" MetadataType="Schema" ID="b07f4b33-eccf-4698-ac02-3d8208870d2e" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GarService.disco" MetadataType="Disco" ID="6c77603c-ae0b-4568-9814-b07abf646cbb" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?disco" />
+    <MetadataFile FileName="GarService3.xsd" MetadataType="Schema" ID="13b1d376-d2df-4911-87d5-df805250ea31" SourceId="1" SourceUrl="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Alcoa.GAR" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Alcoa.GAR" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://noaadc-psaweb01.noa.alcoa.com/Alcoa.GAR/GarService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="GarApplication">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GarInstances" nillable="true" type="tns:ArrayOfGarInstance" />
+      <xs:element minOccurs="0" name="code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarApplication" nillable="true" type="tns:GarApplication" />
+  <xs:complexType name="ArrayOfGarInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarInstance" nillable="true" type="tns:GarInstance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarInstance" nillable="true" type="tns:ArrayOfGarInstance" />
+  <xs:complexType name="GarInstance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GarUsages" nillable="true" type="tns:ArrayOfGarUsage" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="leader1" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="leader2" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="priority" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarInstance" nillable="true" type="tns:GarInstance" />
+  <xs:complexType name="ArrayOfGarUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GarUsage" nillable="true" type="tns:GarUsage" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGarUsage" nillable="true" type="tns:ArrayOfGarUsage" />
+  <xs:complexType name="GarUsage">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bpo1" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="bpo2" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GarUsage" nillable="true" type="tns:GarUsage" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Domain" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Groups" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Office" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+</xs:schema>

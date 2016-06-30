@@ -1,0 +1,243 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Foundation", "Foundation", "{16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56BD92F2-48F3-47F6-A6A9-87E282739FCA}"
+	ProjectSection(SolutionItems) = preProject
+		Alcoa.Framework.vsmdi = Alcoa.Framework.vsmdi
+		Local.testsettings = Local.testsettings
+		nuget.config = nuget.config
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{4F0BC454-F2DF-4C52-A7AB-7D02D29901F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{CCB6B871-447C-4285-A08A-85543A7AF3FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{39DAD7AF-13D6-44B4-B870-A9ECB5231BAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service", "Service", "{1EA996B6-849C-46BB-9663-27ADE1DC1E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Common", "Alcoa.Framework.Common\Alcoa.Framework.Common.csproj", "{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Cache", "Alcoa.Framework.Cache\Alcoa.Framework.Cache.csproj", "{CAB73638-CA8A-4001-9A3A-14D802EBBEF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Log", "Alcoa.Framework.Log\Alcoa.Framework.Log.csproj", "{37670CA5-49FB-459B-9E9F-7BBC769860B6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.DataAccess", "Alcoa.Framework.DataAccess\Alcoa.Framework.DataAccess.csproj", "{80633D01-B4BD-4DAF-9200-E91B7F2E6691}"
+	ProjectSection(ProjectDependencies) = postProject
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE} = {33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{196F2373-4D00-4B12-9D25-6D8D43002F15} = {196F2373-4D00-4B12-9D25-6D8D43002F15}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Domain", "Alcoa.Framework.Domain\Alcoa.Framework.Domain.csproj", "{196F2373-4D00-4B12-9D25-6D8D43002F15}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Application", "Alcoa.Framework.Application\Alcoa.Framework.Application.csproj", "{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691} = {80633D01-B4BD-4DAF-9200-E91B7F2E6691}
+		{764FF70F-8228-4711-996C-70FDB4E55D3B} = {764FF70F-8228-4711-996C-70FDB4E55D3B}
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{196F2373-4D00-4B12-9D25-6D8D43002F15} = {196F2373-4D00-4B12-9D25-6D8D43002F15}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.UnitTest", "Alcoa.Framework.UnitTest\Alcoa.Framework.UnitTest.csproj", "{83E7D654-7E2E-453C-A04F-EEB68BC63B18}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691} = {80633D01-B4BD-4DAF-9200-E91B7F2E6691}
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE} = {33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D} = {883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{196F2373-4D00-4B12-9D25-6D8D43002F15} = {196F2373-4D00-4B12-9D25-6D8D43002F15}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Entity", "Alcoa.Entity\Alcoa.Entity.csproj", "{7110CF47-7CDF-4366-ABA8-DE7A6652479C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Connection", "Alcoa.Framework.Connection\Alcoa.Framework.Connection.csproj", "{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Contract", "Alcoa.Framework.Contract\Alcoa.Framework.Contract.csproj", "{764FF70F-8228-4711-996C-70FDB4E55D3B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Service", "Alcoa.Framework.Service\Alcoa.Framework.Service.csproj", "{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D} = {883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Common.Presentation", "Alcoa.Framework.Common.Presentation\Alcoa.Framework.Common.Presentation.csproj", "{60CA0592-B568-4FFE-B055-EE86D48A34EC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{764FF70F-8228-4711-996C-70FDB4E55D3B} = {764FF70F-8228-4711-996C-70FDB4E55D3B}
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {7110CF47-7CDF-4366-ABA8-DE7A6652479C}
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {C6CD8EAF-9878-4B65-B5F9-B3361C688D82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.Admin", "Alcoa.Framework.Admin\Alcoa.Framework.Admin.csproj", "{2135210B-59B0-47C9-809B-FA239A352ADB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alcoa.Framework.LoadTest", "Alcoa.Framework.LoadTest\Alcoa.Framework.LoadTest.csproj", "{65F32DAE-79E5-42C5-B303-0F5AA0C4B882}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 15
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.soa.alcoa.com:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Alcoa.Framework.Common\\Alcoa.Framework.Common.csproj
+		SccProjectTopLevelParentUniqueName1 = Alcoa.Framework.sln
+		SccProjectName1 = Alcoa.Framework.Common
+		SccLocalPath1 = Alcoa.Framework.Common
+		SccProjectUniqueName2 = Alcoa.Framework.Cache\\Alcoa.Framework.Cache.csproj
+		SccProjectTopLevelParentUniqueName2 = Alcoa.Framework.sln
+		SccProjectName2 = Alcoa.Framework.Cache
+		SccLocalPath2 = Alcoa.Framework.Cache
+		SccProjectUniqueName3 = Alcoa.Framework.Log\\Alcoa.Framework.Log.csproj
+		SccProjectTopLevelParentUniqueName3 = Alcoa.Framework.sln
+		SccProjectName3 = Alcoa.Framework.Log
+		SccLocalPath3 = Alcoa.Framework.Log
+		SccProjectUniqueName4 = Alcoa.Framework.DataAccess\\Alcoa.Framework.DataAccess.csproj
+		SccProjectTopLevelParentUniqueName4 = Alcoa.Framework.sln
+		SccProjectName4 = Alcoa.Framework.DataAccess
+		SccLocalPath4 = Alcoa.Framework.DataAccess
+		SccProjectUniqueName5 = Alcoa.Framework.Domain\\Alcoa.Framework.Domain.csproj
+		SccProjectTopLevelParentUniqueName5 = Alcoa.Framework.sln
+		SccProjectName5 = Alcoa.Framework.Domain
+		SccLocalPath5 = Alcoa.Framework.Domain
+		SccProjectUniqueName6 = Alcoa.Framework.Application\\Alcoa.Framework.Application.csproj
+		SccProjectTopLevelParentUniqueName6 = Alcoa.Framework.sln
+		SccProjectName6 = Alcoa.Framework.Application
+		SccLocalPath6 = Alcoa.Framework.Application
+		SccProjectUniqueName7 = Alcoa.Framework.UnitTest\\Alcoa.Framework.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName7 = Alcoa.Framework.sln
+		SccProjectName7 = Alcoa.Framework.UnitTest
+		SccLocalPath7 = Alcoa.Framework.UnitTest
+		SccProjectUniqueName8 = Alcoa.Entity\\Alcoa.Entity.csproj
+		SccProjectTopLevelParentUniqueName8 = Alcoa.Framework.sln
+		SccProjectName8 = Alcoa.Entity
+		SccLocalPath8 = Alcoa.Entity
+		SccProjectUniqueName9 = Alcoa.Framework.Connection\\Alcoa.Framework.Connection.csproj
+		SccProjectTopLevelParentUniqueName9 = Alcoa.Framework.sln
+		SccProjectName9 = Alcoa.Framework.Connection
+		SccLocalPath9 = Alcoa.Framework.Connection
+		SccProjectUniqueName10 = Alcoa.Framework.Contract\\Alcoa.Framework.Contract.csproj
+		SccProjectTopLevelParentUniqueName10 = Alcoa.Framework.sln
+		SccProjectName10 = Alcoa.Framework.Contract
+		SccLocalPath10 = Alcoa.Framework.Contract
+		SccProjectUniqueName11 = Alcoa.Framework.Service\\Alcoa.Framework.Service.csproj
+		SccProjectTopLevelParentUniqueName11 = Alcoa.Framework.sln
+		SccProjectName11 = Alcoa.Framework.Service
+		SccLocalPath11 = Alcoa.Framework.Service
+		SccProjectUniqueName12 = Alcoa.Framework.Common.Presentation\\Alcoa.Framework.Common.Presentation.csproj
+		SccProjectTopLevelParentUniqueName12 = Alcoa.Framework.sln
+		SccProjectName12 = Alcoa.Framework.Common.Presentation
+		SccLocalPath12 = Alcoa.Framework.Common.Presentation
+		SccProjectUniqueName13 = Alcoa.Framework.Admin\\Alcoa.Framework.Admin.csproj
+		SccProjectTopLevelParentUniqueName13 = Alcoa.Framework.sln
+		SccProjectName13 = Alcoa.Framework.Admin
+		SccLocalPath13 = Alcoa.Framework.Admin
+		SccProjectUniqueName14 = Alcoa.Framework.LoadTest\\Alcoa.Framework.LoadTest.csproj
+		SccProjectTopLevelParentUniqueName14 = Alcoa.Framework.sln
+		SccProjectName14 = Alcoa.Framework.LoadTest
+		SccLocalPath14 = Alcoa.Framework.LoadTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB73638-CA8A-4001-9A3A-14D802EBBEF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB73638-CA8A-4001-9A3A-14D802EBBEF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB73638-CA8A-4001-9A3A-14D802EBBEF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB73638-CA8A-4001-9A3A-14D802EBBEF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37670CA5-49FB-459B-9E9F-7BBC769860B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37670CA5-49FB-459B-9E9F-7BBC769860B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37670CA5-49FB-459B-9E9F-7BBC769860B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37670CA5-49FB-459B-9E9F-7BBC769860B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{196F2373-4D00-4B12-9D25-6D8D43002F15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{196F2373-4D00-4B12-9D25-6D8D43002F15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{196F2373-4D00-4B12-9D25-6D8D43002F15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{196F2373-4D00-4B12-9D25-6D8D43002F15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E7D654-7E2E-453C-A04F-EEB68BC63B18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E7D654-7E2E-453C-A04F-EEB68BC63B18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E7D654-7E2E-453C-A04F-EEB68BC63B18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E7D654-7E2E-453C-A04F-EEB68BC63B18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{764FF70F-8228-4711-996C-70FDB4E55D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{764FF70F-8228-4711-996C-70FDB4E55D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{764FF70F-8228-4711-996C-70FDB4E55D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{764FF70F-8228-4711-996C-70FDB4E55D3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60CA0592-B568-4FFE-B055-EE86D48A34EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60CA0592-B568-4FFE-B055-EE86D48A34EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60CA0592-B568-4FFE-B055-EE86D48A34EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60CA0592-B568-4FFE-B055-EE86D48A34EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2135210B-59B0-47C9-809B-FA239A352ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2135210B-59B0-47C9-809B-FA239A352ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2135210B-59B0-47C9-809B-FA239A352ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2135210B-59B0-47C9-809B-FA239A352ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F32DAE-79E5-42C5-B303-0F5AA0C4B882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F32DAE-79E5-42C5-B303-0F5AA0C4B882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F32DAE-79E5-42C5-B303-0F5AA0C4B882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F32DAE-79E5-42C5-B303-0F5AA0C4B882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6CD8EAF-9878-4B65-B5F9-B3361C688D82} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{CAB73638-CA8A-4001-9A3A-14D802EBBEF7} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{37670CA5-49FB-459B-9E9F-7BBC769860B6} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{7110CF47-7CDF-4366-ABA8-DE7A6652479C} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{33CE5D0E-2775-4F43-BF7E-D16D65AB95DE} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{60CA0592-B568-4FFE-B055-EE86D48A34EC} = {16BD1767-5CE7-4EC3-8BEF-A019B9E096F8}
+		{80633D01-B4BD-4DAF-9200-E91B7F2E6691} = {4F0BC454-F2DF-4C52-A7AB-7D02D29901F6}
+		{196F2373-4D00-4B12-9D25-6D8D43002F15} = {4F0BC454-F2DF-4C52-A7AB-7D02D29901F6}
+		{883F5A0F-9D45-42D6-9DA2-06C2D77D8B7D} = {4F0BC454-F2DF-4C52-A7AB-7D02D29901F6}
+		{2135210B-59B0-47C9-809B-FA239A352ADB} = {CCB6B871-447C-4285-A08A-85543A7AF3FD}
+		{83E7D654-7E2E-453C-A04F-EEB68BC63B18} = {39DAD7AF-13D6-44B4-B870-A9ECB5231BAD}
+		{65F32DAE-79E5-42C5-B303-0F5AA0C4B882} = {39DAD7AF-13D6-44B4-B870-A9ECB5231BAD}
+		{764FF70F-8228-4711-996C-70FDB4E55D3B} = {1EA996B6-849C-46BB-9663-27ADE1DC1E70}
+		{E46AFB9A-88A7-4D1E-BB63-3134D11C5C6C} = {1EA996B6-849C-46BB-9663-27ADE1DC1E70}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Alcoa.Framework.vsmdi
+	EndGlobalSection
+EndGlobal

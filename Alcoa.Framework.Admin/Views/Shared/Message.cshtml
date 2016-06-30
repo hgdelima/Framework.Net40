@@ -1,0 +1,51 @@
+﻿@model Alcoa.Framework.Common.Presentation.Web.Mvc.HeaderModel
+
+<div id="msgDialog"></div>
+
+<script type="text/javascript">
+    var msgDialog = $("#msgDialog");
+    var regex = new RegExp("^(?!mailto:)(?:(?:http|https|ftp)://)(?:\\S+(?::\\S*)?)?(?:(?:(?:[1-9]\\d?|1\\d\\d|2[01]\\d|22[0-3])(?:\\.(?:1?\\d{1,2}|2[0-4]\\d|25[0-5])){2}(?:\\.(?:[0-9]\\d?|1\\d\\d|2[0-4]\\d|25[0-4]))|(?:(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)(?:\\.(?:[a-z\\u00a1-\\uffff0-9]+-?)*[a-z\\u00a1-\\uffff0-9]+)*(?:\\.(?:[a-z\\u00a1-\\uffff]{2,})))|localhost)(?::\\d{2,5})?(?:(/|\\?|#)[^\\s]*)?$");
+
+    if (!msgDialog.data("kendoWindow")) {
+        msgDialog.kendoWindow({
+            modal: true,
+            resizable: false,
+            visible: false,
+            actions: [
+                "Minimize",
+                "Maximize",
+                "Close"
+            ]
+        });
+    }
+
+    function openDialog(msgContent, msgTitle, msgWidth, msgHeight) {
+        //Default value
+        if (msgTitle == null || msgTitle == "")
+            msgTitle = "@Model.LabelMessageTitle";
+
+        //Default value
+        if (isNaN(msgWidth))
+            msgWidth = 400;
+
+        //Default value
+        if (isNaN(msgHeight))
+            msgHeight = 200;
+
+        var msgModal = msgDialog.data("kendoWindow");
+        msgModal.setOptions({
+            title: msgTitle,
+            width: msgWidth,
+            height: msgHeight
+        });
+
+        if (regex.test(msgContent)) {
+            msgModal.refresh({ url: msgContent, iframe: true });
+        } else {
+            msgModal.content(msgContent);
+        }
+
+        msgModal.center();
+        msgModal.open();
+    }
+</script>

@@ -1,0 +1,89 @@
+﻿@model Alcoa.Framework.Common.Presentation.Web.Mvc.HeaderModel
+
+<style>
+    #aboutDialog {
+        float: left;
+        margin: 0;
+        border: 0;
+        padding: 10px;
+        height: 100%;
+        width: 100%;
+        color: white;
+        background-color: #394e6f;
+        font-family: Arial, Verdana;
+    }
+
+        #aboutDialog label {
+            font-weight: bold;
+        }
+</style>
+
+<div id="aboutDialog">
+    <p>
+        @Html.LabelForModel(Model.LabelAppTitle)<br />
+        @Model.AppTitle
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelAppCode): @Model.AppCode<br />
+        @Html.LabelForModel(Model.LabelAppVersion): @Model.AppVersion
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelServiceDeskContact)
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelExtensionLine): @Model.ServiceDeskExtension <br />
+        @Html.LabelForModel(Model.LabelDirectLine): @Model.ServiceDeskLine
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelGarTitle)
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelGarLeadersTitle) <br />
+        @Html.LabelForModel(Model.LabelGarMainLeader): @Model.GarMainLeader
+        @Html.Label("E-mail"): @Model.GarMainLeaderEmail <br />
+        @Html.LabelForModel(Model.LabelGarBackupLeader): - @Model.GarBackupLeader
+        @Html.Label("E-mail"): @Model.GarBackupLeaderEmail <br />
+    </p>
+
+    <p>
+        @Html.LabelForModel(Model.LabelGarBPOsTitle) <br />
+        @Html.LabelForModel(Model.LabelGarMainBPO): @Model.GarMainBPO
+        @Html.Label("E-mail"): @Model.GarMainBPOEmail <br />
+        @Html.LabelForModel(Model.LabelGarBackupBPO) - @Model.GarBackupBPO
+        @Html.Label("E-mail"): @Model.GarBackupBPOEmail <br />
+    </p>
+</div>
+
+<script type="text/javascript">
+    var aboutDialog = $("#aboutDialog");
+
+    if (!aboutDialog.data("kendoWindow")) {
+        aboutDialog.kendoWindow({
+            modal: true,
+            resizable: false,
+            visible: false,
+            width: 600,
+            height: 400,
+            actions: [
+                "Minimize",
+                "Maximize",
+                "Close"
+            ]
+        });
+    }
+
+    function openAboutDialog() {
+        var msgAbout = aboutDialog.data("kendoWindow");
+        msgAbout.setOptions({
+            title: "@Model.LabelMenuAbout"
+        });
+
+        msgAbout.center();
+        msgAbout.open();
+    }
+</script>

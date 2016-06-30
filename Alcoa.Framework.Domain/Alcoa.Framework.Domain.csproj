@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{196F2373-4D00-4B12-9D25-6D8D43002F15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alcoa.Framework.Domain</RootNamespace>
+    <AssemblyName>Alcoa.Framework.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\Area.cs" />
+    <Compile Include="Entity\BudgetCode.cs" />
+    <Compile Include="Entity\ApplicationParameter.cs" />
+    <Compile Include="Entity\EmailGatewayLog.cs" />
+    <Compile Include="Entity\SsoProfileAndActiveDirectory.cs" />
+    <Compile Include="Entity\SsoProfileAndService.cs" />
+    <Compile Include="Entity\SsoGroup.cs" />
+    <Compile Include="Entity\SsoApplication.cs" />
+    <Compile Include="Entity\SsoServices.cs" />
+    <Compile Include="Entity\SsoProfile.cs" />
+    <Compile Include="Entity\SsoProfileAndWorker.cs" />
+    <Compile Include="Entity\ApplicationTranslation.cs" />
+    <Compile Include="Entity\ActiveDirectoryGroup.cs" />
+    <Compile Include="Entity\Dept.cs" />
+    <Compile Include="Entity\Lbc.cs" />
+    <Compile Include="Entity\Site.cs" />
+    <Compile Include="Entity\EmailGateway.cs" />
+    <Compile Include="Entity\WorkerHierarchy.cs" />
+    <Compile Include="Entity\Worker.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alcoa.Entity\Alcoa.Entity.csproj">
+      <Project>{7110CF47-7CDF-4366-ABA8-DE7A6652479C}</Project>
+      <Name>Alcoa.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alcoa.Framework.Common\Alcoa.Framework.Common.csproj">
+      <Project>{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}</Project>
+      <Name>Alcoa.Framework.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

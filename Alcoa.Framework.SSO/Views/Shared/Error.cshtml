@@ -1,0 +1,17 @@
+﻿@model HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+<fieldset class="title">
+    <legend>@ViewBag.Title</legend>
+    <ol>
+        <li>
+            <h1 class="error">Error.</h1>
+        </li>
+        <li>
+            <h2 class="error">Message: @Model.Exception.Message</h2>
+        </li>
+        <li></li>
+    </ol>
+</fieldset>

@@ -1,0 +1,2 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Alcoa.Framework.Application.Service.LocationSiteService"
+    CodeBehind="Alcoa.Framework.Application.Service.LocationSiteService.cs" %>

@@ -1,0 +1,162 @@
+﻿@model Alcoa.Framework.Common.Presentation.Web.Mvc.HeaderModel
+
+<header>
+    <nav class="navbar navbar-header navbar-fixed-top alcoa-header" role="navigation">
+        <div id="alcoa-header" class="@Model.CssAlcoaHeader">
+            <div id="alcoa-header-logo">
+                <div class="alcoa-header-logo-image">
+                    <div></div>
+                </div>
+                <div class="alcoa-header-logo-separator">
+                    <span>&nbsp;</span>
+                </div>
+                <div class="alcoa-header-logo-trigger">
+                    <span></span>
+                </div>
+            </div>
+            <div id="alcoa-header-title">
+                <span>@Model.AppTitle</span>
+            </div>
+            <div id="alcoa-header-user">
+                @if (Request.IsAuthenticated)
+                {
+                <ul id="alcoa-header-current-user">
+                    <li>
+                        <i>@User.Identity.Name</i>
+                        <ul>
+                            <li>
+                                <div id="alcoa-header-user-info">
+                                    @if (Model.UserGender == "F")
+                                    {
+                                        <img src="~/Content/images/user_not_identified_female.jpg" alt="Alcoan" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Content/images/user_not_identified_male.jpg" alt="Alcoan" />
+                                    }
+                                    <h2>@Model.LabelUserTitle</h2>
+                                    <div>
+                                        @Model.LabelUserName: @Model.UserName<br />
+                                        E-mail: @Model.UserEmail<br />
+                                        @Model.LabelExtensionLine: @Model.UserExtensionLine<br />
+                                        @Model.LabelLanguage: @Html.ActionLink("pt-BR", "", new { language = "pt-BR" }) |
+                                        @Html.ActionLink("en-US", "", new { language = "en-US" }) |
+                                        @Html.ActionLink("es-ES", "", new { language = "es-ES" })
+                                        <br /><br />
+                                        @Html.ActionLink(Model.LabelLogOut, "Index", "Login")
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                }
+            </div>
+            <div id="alcoa-header-menu">
+                <ul id="alcoa-header-menu-about"></ul>
+                @if (Request.IsAuthenticated)
+                {
+                    <ul id="alcoa-header-menu-current-app"></ul>
+                    <ul id="alcoa-header-menu-my-apps"></ul>
+                }
+            </div>
+        </div>
+    </nav>
+
+    @Html.Partial("About")
+
+    @Html.Partial("Message")
+</header>
+<script>
+    $.ajaxSetup({ cache: false });
+
+    $(document).ready(function () {
+        $("#alcoa-header-current-user").kendoMenu();
+        $("#alcoa-header-menu-current-app").hide();
+        $("#alcoa-header-menu-my-apps").hide();
+
+        //Builds left menu, with current application options
+        var dsAppMenu = new kendo.data.DataSource({
+            type: "json",
+            transport: {
+                datatype: "json",
+                read: { url: "@Url.Action("GetApplicationMenu")" }
+            },
+            schema: {
+                model: {
+                    fields: { text: { type: "string" }, }
+                }
+            }
+        });
+
+        //Reads data and fill menu options
+        dsAppMenu.fetch(function () {
+            var appMenu = this.data().toJSON();
+
+            if (appMenu != null) {
+                $("#alcoa-header-menu-current-app").kendoMenu({ dataSource: appMenu });
+                $("#alcoa-header-menu-current-app").show();
+            }
+        });
+
+        //Builds right menu, with user authorized apps
+        var dsUserMenu = new kendo.data.DataSource({
+            type: "json",
+            transport: {
+                datatype: "json",
+                read: { url: "@Url.Action("GetMyAppsMenu")" }
+            },
+            schema: {
+                model: {
+                    fields: { text: { type: "string" }, }
+                }
+            }
+        });
+
+        //Reads data and fill menu options
+        dsUserMenu.fetch(function () {
+            var userMenu = this.data().toJSON();
+
+            if (userMenu != null) {
+                $("#alcoa-header-menu-my-apps").kendoMenu({ dataSource: userMenu });
+                $("#alcoa-header-menu-my-apps").find(".k-link").attr("target", "_blank");
+                $("#alcoa-header-menu-my-apps").show();
+            }
+        });
+
+        //Builds about menu, with help options
+        var dsAboutMenu = new kendo.data.DataSource({
+            type: "json",
+            transport: {
+                datatype: "json",
+                read: { url: "@Url.Action("GetAboutMenu")" }
+            },
+            schema: {
+                model: {
+                    fields: { text: { type: "string" }, }
+                }
+            }
+        });
+
+        //Reads data and fill menu options
+        dsAboutMenu.fetch(function () {
+            var aboutMenu = this.data().toJSON();
+
+            if (aboutMenu != null) {
+                $("#alcoa-header-menu-about").kendoMenu({
+                    dataSource: aboutMenu,
+                    select: function (e) {
+                        e.preventDefault();
+                        var clickedItem = e.item;
+
+                        if (clickedItem.firstChild != null && clickedItem.firstChild.href != undefined) {
+                            openDialog(clickedItem.firstChild.href, clickedItem.firstChild.innerText, 850, 600);
+                        } else {
+                            openAboutDialog();
+                        }
+                    },
+                });
+            }
+        });
+    });
+</script>

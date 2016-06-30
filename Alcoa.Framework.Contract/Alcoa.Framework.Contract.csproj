@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{764FF70F-8228-4711-996C-70FDB4E55D3B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alcoa.Framework.Contract</RootNamespace>
+    <AssemblyName>Alcoa.Framework.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Alcoa.Framework.Contract.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTOs\Corporate\ApplicationListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\AreaListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\BudgetCodeListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\SiteListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\SiteLeafDTO.cs" />
+    <Compile Include="DTOs\Corporate\ThirdPartnerDTO.cs" />
+    <Compile Include="DTOs\LocationSite\ApplicationFilterDTO.cs" />
+    <Compile Include="DTOs\LocationSite\WorkerFilterDTO.cs" />
+    <Compile Include="DTOs\LocationSite\WorkerListFilterDTO.cs" />
+    <Compile Include="DTOs\Sso\ApplicationListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\AreaFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\AreaDTO.cs" />
+    <Compile Include="DTOs\Corporate\BudgetCodeDTO.cs" />
+    <Compile Include="DTOs\Corporate\BudgetCodeFilterDTO.cs" />
+    <Compile Include="DTOs\ApplicationDTO.cs" />
+    <Compile Include="DTOs\Sso\ApplicationFilterDTO.cs" />
+    <Compile Include="DTOs\Sso\ActiveDirectoryGroupDTO.cs" />
+    <Compile Include="DTOs\Corporate\AreaLeafDTO.cs" />
+    <Compile Include="DTOs\Sso\ActiveDirectoryGroupFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\ConnectionStringFilterDTO.cs" />
+    <Compile Include="DTOs\Sso\SsoAuthorizationDTO.cs" />
+    <Compile Include="DTOs\Sso\UserListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\WorkerListFilterDTO.cs" />
+    <Compile Include="DTOs\Corporate\WorkerLeafDTO.cs" />
+    <Compile Include="DTOs\Sso\SsoServicesDTO.cs" />
+    <Compile Include="DTOs\Sso\SsoUserDTO.cs" />
+    <Compile Include="DTOs\Sso\SsoAuthenticationDTO.cs" />
+    <Compile Include="DTOs\Sso\NetworkDomainDTO.cs" />
+    <Compile Include="DTOs\Sso\ActiveDirectoryGroupListFilterDTO.cs" />
+    <Compile Include="DTOs\ProfileDTO.cs" />
+    <Compile Include="DTOs\Sso\UserFilterDTO.cs" />
+    <Compile Include="DTOs\Sso\SsoGroupDTO.cs" />
+    <Compile Include="DTOs\UserDTO.cs" />
+    <Compile Include="DTOs\Corporate\DeptDTO.cs" />
+    <Compile Include="DTOs\Corporate\LbcDTO.cs" />
+    <Compile Include="DTOs\Corporate\SiteDTO.cs" />
+    <Compile Include="DTOs\Corporate\SiteFilterDTO.cs" />
+    <Compile Include="DTOs\WorkerDTO.cs" />
+    <Compile Include="DTOs\Corporate\WorkerFilterDTO.cs" />
+    <Compile Include="Interfaces\ILocationSiteService.cs" />
+    <Compile Include="Interfaces\IEmailService.cs" />
+    <Compile Include="Interfaces\ISsoService.cs" />
+    <Compile Include="Interfaces\ICorporateService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alcoa.Entity\Alcoa.Entity.csproj">
+      <Project>{7110CF47-7CDF-4366-ABA8-DE7A6652479C}</Project>
+      <Name>Alcoa.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alcoa.Framework.Common\Alcoa.Framework.Common.csproj">
+      <Project>{C6CD8EAF-9878-4B65-B5F9-B3361C688D82}</Project>
+      <Name>Alcoa.Framework.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTOs\Email\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Alcoa.Framework.Contract.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
